@@ -12,7 +12,7 @@
                 @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('client.index') }}">Client</a>
-                    <a href="{{ route('produit.index') }}" class="nav-link">Produits</a>
+                    <a href="{{ route('produit.index') }}" class="nav-link">Gestionnaire</a>
                 </li>
                 @if(auth()->user()->role == 'gestionnaire')
                 <li class="nav-item">
