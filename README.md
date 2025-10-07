@@ -1,123 +1,189 @@
-ISIBUrger - Site de Vente de Burgers
-Description
-BurgerShop est une application web développée avec Laravel qui permet la gestion complète d’un site de vente de burgers. Elle offre une interface simple et intuitive pour les clients souhaitant commander leurs burgers préférés en ligne, ainsi qu’un espace d’administration pour gérer les produits, commandes et stocks.
+ISIBurger - Site de Vente de Burgers
 
-Fonctionnalités principales
-Gestion des produits : ajout, modification, suppression et listing des burgers avec leurs descriptions, prix et images.
+Français 🇫🇷
+🔗 Liens du Projet
 
-Gestion du panier : ajout des burgers, modification des quantités, calcul automatique du total.
+🌐 Démo en ligne : À venir
 
-Passage de commande : formulaire de commande avec validation, suivi des commandes clients.
+📧 Contact :kantechagency@gmail.com
 
-Gestion des commandes : consultation, mise à jour du statut (en cours, préparée, livrée).
+🔗 GitHub : @KanteMaodo
 
-Authentification utilisateur : inscription, connexion, gestion des sessions.
+📘 Aperçu
 
-Interface responsive : compatible desktop et mobile.
+ISIBurger est une application web complète développée avec Laravel 12 pour la gestion d’un site de vente de burgers en ligne.
+Elle permet aux clients de commander facilement leurs burgers préférés et aux gestionnaires d’administrer les produits, les commandes, les paiements et les stocks à travers une interface intuitive.
 
-Génération automatique de factures (PDF) (si tu as cette fonction).
+✨ Fonctionnalités Clés
 
-Notifications par email (confirmation commande, etc.) (si implémenté).
+🧾 Gestion des produits : CRUD complet (ajout, modification, suppression, liste), avec nom, description, prix, image et stock.
 
+🛒 Gestion du panier : ajout des burgers, modification des quantités, calcul automatique du total.
 
-Installation
-Prérequis
-PHP >= 8.1
+📦 Commandes : validation de commande, suivi en temps réel, mise à jour du statut (en cours, préparée, livrée).
+
+💳 Paiements : enregistrement des paiements en espèces (ou autres modes si implémentés).
+
+👥 Authentification : inscription, connexion, gestion des rôles (client, administrateur).
+
+📑 Factures PDF : génération automatique des factures pour chaque commande.
+
+📧 Notifications : envoi d’e-mails de confirmation et notifications au gestionnaire.
+
+📊 Statistiques : suivi des ventes, recettes journalières/mensuelles, graphiques avec Chart.js.
+
+📱 Design responsive : compatible desktop et mobile.
+
+🛠️ Prérequis
+
+Avant de lancer le projet, assure-toi d’avoir installé :
+
+PHP ≥ 8.1
 
 Composer
 
-Base de données (MySQL, PostgreSQL, etc.)
+Node.js ≥ 16
 
+npm ou yarn
 
-Étapes
-Cloner le projet
+Base de données : MySQL / PostgreSQL
 
-bash
-Copier
-Modifier
-git clone https://github.com/ton-utilisateur/ton-projet-burger.git
-cd ton-projet-burger
-Installer les dépendances PHP
+ Installation & Configuration
+1. Cloner le dépôt
+git clone https://github.com/ton-utilisateur/isi-burger.git
+cd isi-burger
 
-bash
-Copier
-Modifier
+2. Installer les dépendances PHP
 composer install
-Copier le fichier d’environnement et configurer
 
-bash
-Copier
-Modifier
+3. Copier et configurer le fichier d’environnement
 cp .env.example .env
-Modifier .env pour renseigner la connexion à la base de données, par exemple :
 
-makefile
-Copier
-Modifier
+
+Configure la base de données dans le fichier .env :
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=burgerdb
 DB_USERNAME=root
 DB_PASSWORD=
-Générer la clé d’application
 
-bash
-Copier
-Modifier
+4. Générer la clé d’application
 php artisan key:generate
-Lancer les migrations et les seeders (si présents)
 
-bash
-Copier
-Modifier
+5. Lancer les migrations et les seeders
 php artisan migrate --seed
-Installer les dépendances frontend et compiler les assets
 
-bash
-Copier
-Modifier
+6. Installer les dépendances front-end
 npm install
 npm run dev
-Lancer le serveur local
 
-bash
-Copier
-Modifier
+7. Démarrer le serveur local
 php artisan serve
-L’application sera accessible sur http://127.0.0.1:8000
 
-Utilisation
-Se connecter / créer un compte client pour passer commande.
+🧭 Utilisation
+👤 Côté Client
 
-Parcourir la liste des burgers disponibles.
+Créer un compte ou se connecter
 
-Ajouter au panier, modifier quantités.
+Parcourir les burgers disponibles
 
-Valider la commande et recevoir une confirmation.
+Ajouter au panier, modifier les quantités
 
-(Si espace admin) Gérer les produits, voir les commandes en cours.
+Valider la commande et recevoir un e-mail de confirmation
 
+🧑‍💼 Côté Administrateur
+
+Gérer les produits (CRUD)
+
+Consulter les commandes, changer les statuts
+
+Voir les ventes, recettes et statistiques
+
+Générer les factures PDF
+
+📁 Structure du Projet
+isi-burger/
+├── app/
+│   ├── Models/
+│   │   ├── Produit.php
+│   │   ├── Commande.php
+│   │   ├── Paiement.php
+│   │   └── User.php
+│   └── Http/
+│       ├── Controllers/
+│       └── Middleware/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── views/        # Pages Blade
+│   ├── css/          # Styles
+│   └── js/           # Scripts
+├── routes/
+│   └── web.php
+├── public/
+├── .env
+├── composer.json
+└── package.json
+
+⚙️ Technologies Utilisées
+Backend
+Eloquent ORM
+
+Sanctum (authentification)
+
+Frontend
+
+Blade + Tailwind CSS
+
+Vite
+
+Chart.js pour les graphiques
+
+Autres
+
+MySQL / PostgreSQL
+
+Composer, NPM
+
+Laravel DomPDF pour les factures
 Tests
-(À compléter si tu as ajouté des tests unitaires ou fonctionnels)
 
-bash
-Copier
-Modifier
+Si tu as ajouté des tests :
+
 php artisan test
-Contribution
-Les contributions sont les bienvenues. Pour proposer des améliorations :
 
-Forker le projet
+🤝 Contribution
 
-Créer une branche feature (git checkout -b feature/ma-fonctionnalite)
+Les contributions sont les bienvenues :
 
-Committer vos changements (git commit -m 'Ajouter une fonctionnalité')
+Forker le dépôt
 
-Pousser la branche (git push origin feature/ma-fonctionnalite)
+Créer une branche (git checkout -b feature/nouvelle-fonctionnalite)
+
+Committer vos changements (git commit -m "Ajout nouvelle fonctionnalité")
+
+Pousser la branche (git push origin feature/nouvelle-fonctionnalite)
 
 Ouvrir une Pull Request
 
-Auteur
+👤 Auteur
+
 Maodo KANTE
 
+💼 Développeur Web Fullstack (Laravel, Tailwind, MySQL)
+📧 Email : kantechagency@gmail.com
+
+🔗 GitHub : @kanteMaodo
+
+🔄 Historique des Versions
+
+v1.0.0 - Version initiale : CRUD produits, panier, commandes
+
+v1.1.0 - Ajout factures PDF et notifications e-mail
+
+v1.2.0 - Statistiques et tableau de bord admin
+
+Fait avec ❤️ par Maodo KANTE
